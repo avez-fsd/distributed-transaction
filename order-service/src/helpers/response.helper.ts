@@ -5,7 +5,7 @@ import logger from '@helpers/logger.helper';
 
 const finalResponse = (req: Request, res: Response, message: string, data: any, code: number) => {
   const ok = code.toString().startsWith("2");
-
+  res.status(code)
   if (ok) {
     res.set("Content-Type", `application/json`);
     res.send(data)

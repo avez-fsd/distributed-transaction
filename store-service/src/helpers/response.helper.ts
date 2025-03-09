@@ -5,7 +5,7 @@ import logger from '@helpers/logger.helper';
 
 const finalResponse = (req: Request, res: Response, message: string, data: any, code: number) => {
   const ok = code.toString().startsWith("2");
-
+  res.status(code)
   if (ok) {
     res.set("Content-Type", `application/json`);
     res.send(data)
@@ -36,11 +36,13 @@ const failed = (req: Request, res: Response, message = "Failed", data?: any, htt
 
 const handler = {
   handler404: (req: Request, res: Response, next: any) => {
+    console.log(req.url,'check this ')
     next(new NotFoundException("Path not found", req.requestId));
   },
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   handler5xx: (err: any, req: Request, res: Response, next: NextFunction) => {
+    console.log(err,'check error')
     const e = err as unknown as CustomException;
     Object.assign(err, { error: err });
 

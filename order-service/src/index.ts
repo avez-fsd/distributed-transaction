@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import '@datasources/connection'
 
 import routes from './routes'
 import addRequestId from '@middelwares/request-id.middleware';
@@ -14,6 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(addRequestId);
+
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end();
+});
 
 app.use('/', routes);
 
