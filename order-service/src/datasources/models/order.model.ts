@@ -29,6 +29,16 @@ export default class Order extends Model {
   orderId?: string
 
   @Column({
+    field: 'agent_id'
+  })
+  agentId?: number
+
+  @Column({
+    field: 'packet_id'
+  })
+  packetId?: number
+
+  @Column({
     field: 'status',
     type: DataTypes.ENUM(
         'INITIAL',

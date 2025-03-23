@@ -1,4 +1,4 @@
-import { Table, Column, Model } from 'sequelize-typescript'
+import { Table, Column, Model, DataType } from 'sequelize-typescript'
 
 @Table({
   tableName: 'agents',
@@ -24,9 +24,11 @@ export default class Agent extends Model {
   isReserved?: boolean
 
   @Column({
-    field: 'order_id'
+    field: 'order_id',
+    type: DataType.STRING,
+    allowNull: true
   })
-  orderId?: string
+  orderId?: string | null
 
 
   @Column({

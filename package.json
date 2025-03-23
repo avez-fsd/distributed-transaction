@@ -1,0 +1,25 @@
+{
+  "name": "distributed-transaction",
+  "version": "1.0.0",
+  "description": "Kafka Admin",
+  "main": "kafka-admin.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "configure-kafka": "node kafka-admin.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avez-fsd/distributed-transaction.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avez-fsd/distributed-transaction/issues"
+  },
+  "homepage": "https://github.com/avez-fsd/distributed-transaction#readme",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
